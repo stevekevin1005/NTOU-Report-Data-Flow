@@ -1,4 +1,12 @@
 $(function() {
+  var options = {
+    xaxis: {
+        axisLabel: "2012",
+    },
+    yaxes: {
+      axisLabel: "Gold Price(USD)"
+    }
+  };
 	var student = [{
 			score: 2,
 			grade: 27
@@ -29,9 +37,12 @@ $(function() {
 		d1.push([student[i].grade, student[i].score]);
 	}
 
+	console.log(d1);
 
-
-	$.plot("#chart", [ d1]);
+	$.plot("#chart", [{
+		label: 'IEET',
+		data: d1
+	}],options);
 
 	
 });
